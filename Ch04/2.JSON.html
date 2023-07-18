@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.JSON</title>
+    <!--
+        날짜: 2023/07/18
+        이름: 정영재
+        내용: JS JSON 실습
+    -->
+</head>
+<body>
+    <h4>2.JSON</h4>
+    <script>
+        //JSON 객체
+        const user = {
+            "id": "1",
+            "name": "김유신",
+            "age": 67,
+            "hp": "010-6464-9779"
+        };
+
+        document.write('user: '+ user + '<br>');
+        document.write('id: ' + user.id +'<br>');
+        document.write('name: ' + user.name +'<br>');
+        document.write('hp: ' + user.hp +'<br>');
+        document.write('age: ' + user.age +'<br>');
+
+        for(let k in user){
+            document.write(k + ': ' + user[k] + '<br>');
+        }
+
+        // JSON 객체 배열
+        const jsonDate = {
+            "users": [
+                {"id": "1",
+                 "name": "김유신",
+                 "age": 67,
+                 "hp": "010-6464-9779"},
+                {"id": "2",
+                 "name": "강감찬",
+                 "age": 87,
+                 "hp": "010-1341-9875"},
+                {"id": "3",
+                 "name": "이이",
+                 "age": 20,
+                 "hp": "010-9789-5546"},
+                {"id": "4",
+                 "name": "이순신",
+                 "age": 90,
+                 "hp": "010-3132-6644"},
+                {"id": "5",
+                 "name": "세종",
+                 "age": 50,
+                 "hp": "010-9779-7979"},
+          ]
+
+        };
+
+        for(let k of jsonDate.users){
+
+            document.write('<p>')
+            document.write('uid: ' + user.id +'<br>' );
+            document.write('name: ' + user.name +'<br>' );
+            document.write('age: ' + user.age +'<br>' );
+            document.write('hp: ' + user.hp +'<br>' );
+
+            document.write('</p>')
+        }
+
+        //JSON함수
+
+        const user1 = {"name":"김유신","age":"58","addr":"양양"};
+
+        //제이슨 데이터를 문자열로 변환
+        let strUser1 = JSON.stringify(user1);
+
+
+        document.write('user1: ' + user1 + '<br>');
+        document.write('user1: ' + strUser1 + '<br>');
+
+        //JSON문자열을 객체로 변환
+        let strUser2 = JSON.parse(strUser1);
+
+        document.write('user2: ' + strUser2 + '<br>');
+        document.write('user2 이름: ' + strUser2.name + '<br>');
+        document.write('user2 나이: ' + strUser2.age + '<br>');
+        document.write('user2 주소: ' + strUser2.addr + '<br>');
+
+    </script>
+    
+</body>
+</html>
