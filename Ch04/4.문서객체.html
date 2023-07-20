@@ -15,6 +15,10 @@
         .red   {background-color: red;}
         .blue  {background-color: blue;}
         .green {background-color: green;}
+        img{
+            width: 300px;
+            height: 300px;
+        }
 
     </style>
 </head>
@@ -69,11 +73,108 @@
     <div class="box">box1</div>
     <div class="box green">box2</div>
     <div class="box">box3</div>
-      
+    
+    <h4>문서 객체 추가/ 이동</h4>
+    <ul class="city">
+        <li><em>경기도</em><ol></ol></li>
+        <li><em>충청도</em><ol></ol></li>
+        <li><em>강원도</em><ol></ol></li>
+        <li>
+            <em>경상도</em>
+            <ol>
+                <li>창원</li>
+                <li>수원</li>
+                <li>목포</li>
+                <li>부여</li>
+                <li>원주</li>
+                <li>파주</li>                
+            </ol>
+        </li>
+        <li><em>전라도</em><ol></ol></li>
+    </ul>
+
+    <script>
+        // 문서객체 추가/이동
+        const gyeonggi   = document.querySelector('.city > li:nth-child(1) > ol')
+        const chungchung = document.querySelector('.city > li:nth-child(2) > ol')
+        const gangwon    = document.querySelector('.city > li:nth-child(3) > ol')
+        const gyeonsang  = document.querySelector('.city > li:nth-child(4) > ol')
+        const jeonlla    = document.querySelector('.city > li:nth-child(5) > ol')
+
+        gyeonggi.insertAdjacentHTML('beforeend','<li>평택</li>')
+        gyeonggi.insertAdjacentHTML('beforeend','<li>용인</li>')
+        gyeonggi.insertAdjacentHTML('afterbegin','<li>성남</li>')
+        gyeonggi.insertAdjacentHTML('afterbegin','<li>화성</li>')
+
+        chungchung.insertAdjacentHTML('beforeend','<li>단양</li>')
+        gangwon. insertAdjacentHTML('beforeend','<li>춘천</li>')
+        jeonlla. insertAdjacentHTML('beforeend','<li>담양</li>')
+
+        const nodes = gyeonsang.getElementsByTagName('li')
+        const suwon = nodes[1];
+        const mokpo = nodes[2];
+        const buyeo = nodes[3];
+        const wonju = nodes[4];
+        const paju  = nodes[5];
+        
+        gyeonggi.append(suwon);
+        gyeonggi.prepend(paju);
+        jeonlla.append(mokpo);
+        chungchung.prepend(buyeo);
+        gangwon.append(wonju);
+
+
+
+
+
+    </script>
+
+    <h4> 문서객체 생성/삭제</h4>
+    
+    <section>
+
+        <h5>삭제할 예정 입니다.</h5>
+        
+    </section>
+
+
+    <script>
+        //문서 객체 생성/삭제
+        const section = document.getElementsByTagName('section')[0];
+
+        const pNode = document.createElement('p');
+        pNode.id= 'txt'
+        pNode.innerText = '동적으로 생성한 문단태그 p 입이다.';        
+        section.appendChild(pNode)
+
+
+        const imgNode1 = document.createElement('img');
+        imgNode1.classList.add('img1')
+        imgNode1.setAttribute('src','./images/flower1.jpg')
+        imgNode1.setAttribute('alt','꽃1')
+        section.appendChild(imgNode1);
+
+
+        const imgNode2 = document.createElement('img');
+        imgNode2.classList.add('img2')
+        imgNode2.setAttribute('src','./images/flower2.jpg')
+        imgNode2.setAttribute('alt','꽃2')
+        section.insertBefore(imgNode2, imgNode1);//imgNode1앞에다가 출력하란 뜻
+
+
+        const h5 = document.querySelector('h5');
+        h5.remove();
+
+
+
+    </script>
+
+
     <script>
         //////////////////
-        // 문서객체 선택 //
+        // 문서객체 선택 // 
         //////////////////
+        //태그 = 문서객체
         const h3 = document.querySelector('h3');
         h3.style.color = 'gray';
 

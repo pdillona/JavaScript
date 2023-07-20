@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3></h3>
+    
+    <h4>Window 객체</h4>
+    <script>
+        //window객체 - 브라우저 객체, 최상위 객체
+        console.log(window);
+
+        //window.alert('hi')//원래는 window가 앞에 붙는게 맞으나 windnow는 생략가능
+
+
+        //브라우저크기
+        window.document.write('innderwidth: ' + window.innerWidth + '<br>');
+        window.document.write('innerHeight: ' + window.innerHeight + '<br>');
+
+        //새창 띄우기
+        window.open('./1.객체.html','객체예제','width = 600 height = 500'); // 크기 정해서 팝업처럼도 띄워짐
+
+        // 브라우저 저장소
+        window.localStorage.setItem('name','김유신');
+        window.sessionStorage.setItem('name','김춘추');
+
+    </script>
+    
+    <h4>screen 객체</h4>
+    <script>
+        //screen 객체 - 브라우저 운영체제 화면 객체
+        console.log(screen)
+
+        document.write('화면 너비: ' + screen.width + '</br>')
+        document.write('화면 높이: ' + screen.height + '</br>')
+        document.write('화면 너비 (작업 표시줄 제외): ' + screen.availWidth + '</br>')
+        document.write('화면 높이 (작업 표시줄 제외): ' + screen.availHeight + '</br>')
+
+    </script>
+    
+    <h4>navigator 객체</h4>
+    <script>
+        // navigator 객체 - 브라우저 정보 객체
+        console.log(navigator);
+
+        document.write('브라우저 코드명: ' + navigator.appCodeName + '</br>');
+        document.write('브라우저 이름: ' + navigator.appName + '</br>');
+        document.write('브라우저 버전: ' + navigator.appVersion + '</br>');
+        document.write('브라우저 플랫폼: ' + navigator.platform + '</br>');
+        document.write('브라우저 정보: ' + navigator.userActivation + '</br>'); //만약 앱을 만든다치면 여기서 아이폰인지 갤럭시인지 구분 된다.
+      
+    </script>
+    
+    <h4>location 객체</h4>
+    <button onclick="f1()">새로고침</button>
+    <button onclick="f2()">네이버 이동</button>
+    <button onclick="f3()">카카오 이동</button>
+
+    <script>
+        //location 객체 - 브라우저 주소 객체
+        console.log(location);
+
+        //페이지 새로고침
+        const f1 = () => location.reload();
+        
+        //페이지 이동 
+        const f2 = () => location.href = 'https://naver.com'; //뒤로 가기 가능, 주소 히스토리에 등록이 된다. 리플레이스 보다 herf를 이용하길 추천한다.
+        
+        const f3 = () => location.replace('https://daum.net') //뒤로 가기가 안됨. 주소 히스토리에 기록이 되지 않는다.
+
+    </script>
+    
+    <h4>history 객체</h4>
+    <button onclick="back()">뒤로</button>
+    <button onclick="forword()">앞으로</button>
+
+    <script>
+        //history 객체 - 브라우저 주소 이력 객체
+        console.log(history);
+
+        document.write('history length: ' + history.length + '</br>')
+
+        const back = () => history.back();
+        const forword = () => history.forward();
+
+    </script>
+
+
+
+</body>
+</html>
