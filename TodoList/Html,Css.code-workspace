@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../Html,Css"
+		},
+		{
+			"path": "../JavaScript"
+		},
+		{
+			"path": "../Test"
+		}
+	],
+	"settings": {
+		"liveServer.settings.CustomBrowser": "chrome",
+		"liveServer.settings.multiRootWorkspaceName": "Test"
+	}
+}
