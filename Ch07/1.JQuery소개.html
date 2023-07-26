@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.JQuery소개</title>
+    <!--
+        날짜: 2023/07/26
+        이름: 정영재
+        내용: JS JQuery 실습
+    -->
+    <script src="./JS/code.jquery.com_jquery-3.7.0.js"></script>
+    <script>
+        window.onload = function(){
+        const city = document.getElementById('city');
+        const li = city.getElementsByTagName('li');
+        li[0].style.color = 'red';
+    }
+
+    // JQuery처리
+    $(document).ready(function(){
+        
+        const li =$('#city>li:nth-child(5)').css('color','green'); // 문서객체 생성  15번 라인과 같음
+
+    });
+        
+    </script>
+</head>
+<body>
+    <h3>1.JQuery소개</h3>
+
+    <ul id="city">
+        <li>서울</li>
+        <li>대전</li>
+        <li>대구</li>
+        <li>부산</li>
+        <li>경주</li>
+    </ul>
+</body>
+</html>

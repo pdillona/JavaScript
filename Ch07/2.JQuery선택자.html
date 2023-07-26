@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.JQuery선택자</title>
+    <!--
+        날짜: 2023/07/26
+        이름: 정영재
+        내용: JS JQuery 선택자 실습
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            //전체 선택자
+            $('*').css('color','blue');
+
+            // 태그 선택자
+            $('h3').css('color','violet');
+
+            
+            // 클래스 선택자
+            $('.gwangju').css('color','green');
+
+
+            // 아이디 선택자
+            $('#seoul').css('color','gray');
+
+
+            // 자손 선택자
+            $('ol > li').css('color','orange');
+
+
+            // 구조 선택자
+            $('ul>li:nth-child(2)').css('color','yellow');
+            $('ul>li:nth-of-type(3)').css('color','red');
+            $('ul>li:eq(3)').css('color','skyblue');
+
+
+            // 속성 선택자
+            $('input[name=name]').css('background','red');
+            $('input[name=uid]').css('background','lime');
+
+
+            // 셀프 선택자
+            $('ol>li').each(function(){
+
+                $(this).css('border','1px dotted black')
+
+            });
+            //반복문, this는 반복당시 각 인덱스 순서에 해당하는 엘레멘트
+
+
+        });  //함수체이닝 함수를 연달아 호출하는법.
+
+    </script>
+</head>
+<body>
+    <h3>2.JQuery선택자</h3>
+    
+    <ul>
+        <li id="seoul">서울</li>
+        <li>대전</li>
+        <li>대구</li>
+        <li>울산</li>
+        <li>
+            <span>부산</span>
+            <ol>
+                <li>서면</li>
+                <li>경성대</li>
+                <li>해운대</li>
+                <li>남포동</li>
+            </ol>
+        </li>
+        <li class="gwangju">광주</li>
+    </ul>
+
+    <input type="text" name="uid">
+    <input type="text" name="name">
+</body>
+</html>
